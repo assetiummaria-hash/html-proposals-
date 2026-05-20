@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARDEWA × CydonRWA · Basket Europa · USD 100M Complete Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #080808;
+            --bg-secondary: #0d0d0d;
+            --bg-card: #111111;
+            --border-color: #1f1f1f;
+            --border-light: #2a2a2a;
+            --accent: #22C55E;
+            --accent-hover: #16A34A;
+            --accent-bg: rgba(34, 197, 94, 0.06);
+            --text-primary: #FFFFFF;
+            --text-secondary: #E8E8E8;
+            --text-tertiary: #999999;
+            --text-muted: #666666;
+            --gold: #C8963E;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        h1, h2, .headline {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        h1 { font-size: clamp(2.5rem, 4.5vw, 4rem); line-height: 0.95; }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.1; color: var(--text-primary); margin-bottom: 1rem; }
+        h3 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.8rem; }
+        h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1rem; color: var(--accent); margin-bottom: 0.5rem; margin-top: 1.5rem; }
+        .section-tag {
+            font-family: 'DM Mono', monospace; font-weight: 500; font-size: 0.7rem;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--accent);
+            margin-bottom: 0.5rem; display: block;
+        }
+        .accent-line { width: 80px; height: 3px; background: var(--accent); margin: 0.5rem 0 2rem 0; }
+        .green-highlight { color: var(--accent); font-weight: 700; }
+        .gold-highlight { color: var(--gold); font-weight: 700; }
+        .text-secondary { color: var(--text-secondary); }
+        .text-tertiary { color: var(--text-tertiary); }
+        .text-muted { color: var(--text-muted); font-size: 0.9rem; }
+        .text-lg { font-size: 1.05rem; line-height: 1.7; }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 0; border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(8,8,8,0.9); backdrop-filter: blur(12px);
+        }
+        .logo { font-family: 'Bebas Neue', cursive; font-size: 1.8rem; letter-spacing: 2px; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-tertiary); text-decoration: none; font-weight: 500; font-size: 0.8rem; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent); }
+        .section { padding: 5rem 0; border-top: 1px solid var(--border-color); }
+        .section-dark { background: var(--bg-secondary); }
+        .section:first-of-type { border-top: none; }
+        .table-wrap { overflow-x: auto; margin: 2rem 0; }
+        table { width: 100%; border-collapse: collapse; font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-secondary); }
+        th { text-align: left; padding: 0.9rem 1rem; border-bottom: 2px solid var(--border-light); font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.65rem; background: var(--bg-card); }
+        td { padding: 0.8rem 1rem; border-bottom: 1px solid #1a1a1a; }
+        tr:last-child td { border-bottom: none; }
+        tr.total-row { border-top: 2px solid var(--accent); font-weight: 700; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 14px; padding: 1.8rem; transition: var(--transition);
+        }
+        .card:hover { border-color: var(--border-light); transform: translateY(-2px); }
+        .card.featured { border-color: var(--accent); background: var(--accent-bg); }
+        .card-tag {
+            display: inline-block; background: rgba(34,197,94,0.1); color: var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 100px; font-size: 0.6rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem;
+        }
+        .card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .card p, .card li { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.3rem; }
+        .card ul { list-style: none; padding: 0; margin-top: 0.6rem; }
+        .card ul li { padding-left: 1rem; position: relative; }
+        .card ul li::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
+        .btn-primary {
+            background: var(--accent); color: #000; border: none;
+            padding: 0.8rem 2rem; border-radius: 100px; font-family: 'DM Sans', sans-serif;
+            font-weight: 700; font-size: 0.8rem; cursor: pointer; text-transform: uppercase;
+            letter-spacing: 0.5px; transition: var(--transition); text-decoration: none; display: inline-block;
+        }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+        .footer { text-align: center; padding: 2.5rem 0; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.8rem; }
+        .quote-block {
+            border-left: 2px solid var(--accent);
+            padding: 1rem 1.5rem; margin: 1.5rem 0;
+            background: var(--accent-bg); border-radius: 0 8px 8px 0;
+        }
+        .quote-block p { font-size: 1rem; color: var(--text-secondary); font-style: italic; }
+        .quote-block .quote-author { color: var(--accent); font-weight: 600; font-style: normal; margin-top: 0.5rem; font-size: 0.85rem; }
+        .signature-block {
+            margin-top: 2rem; padding: 1.5rem;
+            border: 1px solid var(--border-light); border-radius: 12px;
+            background: var(--bg-card);
+        }
+        .signature-block p { margin-bottom: 0.5rem; }
+        .legal-disclaimer {
+            background: var(--bg-card); border: 1px solid var(--border-light);
+            border-radius: 12px; padding: 1.5rem; margin: 2rem 0;
+            font-size: 0.8rem; color: var(--text-muted);
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .section { padding: 3rem 0; }
+            .headline { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container" style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+            <a href="#" class="logo">ARDEWA<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#model">The Model</a></li>
+                <li><a href="#assetium">Assetium</a></li>
+                <li><a href="#economics">Economics</a></li>
+                <li><a href="#scaling">Scaling</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#nextsteps">Next Steps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section class="section" style="padding-top:3rem;">
+            <div class="container-narrow">
+                <span class="section-tag">Confidential Proposal · May 2026</span>
+                <h1>ARDEWA × CYDONRWA<br>BASKET EUROPA · USD 100M</h1>
+                <div class="accent-line"></div>
+                <p class="text-lg text-secondary" style="margin-bottom:1.5rem;">
+                    <strong>Prepared for:</strong> Cyril Boudon, Founder · <span class="gold-highlight">CydonRWA.com</span><br>
+                    <strong>Prepared by:</strong> Katherine Schneider, Project Development · ARDEWA Infrastructure LLC<br>
+                    <strong>Reference:</strong> ARDEWA TSA V4.0 · Technology Services Agreement
+                </p>
+                <div class="quote-block">
+                    <p>"Cyril, this document explains the complete model. How it works. Why Assetium is the piece that makes it trustworthy. What ARDEWA delivers as a technology platform. And the exact economics of a USD 100M basket, with every cost and every revenue stream clearly identified and negotiable."</p>
+                    <p class="quote-author">Katherine Schneider, Project Development, ARDEWA</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE MODEL -->
+        <section class="section section-dark" id="model">
+            <div class="container-narrow">
+                <span class="section-tag">01 / The Complete Model</span>
+                <h2>How the ARDEWA Basket Works</h2>
+                <div class="accent-line"></div>
+                
+                <p class="text-lg text-secondary">
+                    The ARDEWA Basket is a regulated, institutional-grade tokenization structure that allows a Luxembourg SPV to contribute the economic rights of its underlying European assets to a regulated cross-border vehicle in Dubai, without selling the assets, without conventional debt, and without losing beneficial ownership. The model is built on a double-vehicle legal architecture that separates the jurisdiction of the asset (Luxembourg) from the jurisdiction of the issuance (Dubai, under VARA Rulebook 2.0). This separation is the structural element that makes cross-border tokenization legally sound in both jurisdictions simultaneously.
+                </p>
+                <p class="text-lg text-secondary">
+                    At its core, the model has three layers. The <strong>first layer</strong> is the Luxembourg SPV, which retains full legal title to the underlying assets at all times. Title never leaves Europe. The SPV signs an Assignment of Economic Rights Agreement with the DIFC Prescribed Company in Dubai, contractually assigning the rights over rental income, asset appreciation, or other revenue streams. A security interest is perfected under Luxembourg law, and an independent legal opinion from Luxembourg counsel confirms cross-border enforceability.
+                </p>
+                <p class="text-lg text-secondary">
+                    The <strong>second layer</strong> is the DIFC Prescribed Company (PCR 2024) in Dubai, constituted with Qualifying Purpose: Structured Financing. The DIFC PC is the creditor of the Luxembourg SPV and the holder of the assigned economic rights. It acts as the bridge between the European asset layer and the Dubai-regulated token layer.
+                </p>
+                <p class="text-lg text-secondary">
+                    The <strong>third layer</strong> is the regulated issuance and distribution of ARVA tokens. Against the economic rights held by the DIFC PC, a VARA-licensed Third-Party Tokenization Provider mints the ARVA tokens on the XRP Ledger. Each token represents a creditor position in the DIFC PC, entitling the holder to a pro-rata share of the economic rights held by the DIFC PC over the Luxembourg SPV's assets. A VARA-licensed Custodian provides institutional-grade custody of the tokens. Regulated Distributors place the tokens with pre-vetted institutional investors.
+                </p>
+
+                <div class="legal-disclaimer">
+                    <strong>IMPORTANT LEGAL DISCLAIMER:</strong> ARDEWA Infrastructure LLC is a technology services provider holding a Dubai Mainland commercial license. ARDEWA does NOT issue tokens, provide custody, distribute virtual assets, develop smart contracts, verify assets, or provide legal advice. All regulated virtual asset activities are performed exclusively by independent, appropriately licensed Third-Party Service Providers under separate contracts with the Client. ARDEWA's role is strictly limited to providing the technology platform (SaaS), strategic advisory, and coordination of the ecosystem. ARDEWA holds no VARA license and is not required to hold one for the services it provides under the Technology Services Agreement (TSA V4.0).
+                </div>
+
+                <h4>What ARDEWA Delivers as a Technology Platform</h4>
+                <p class="text-lg text-secondary">
+                    ARDEWA provides a proprietary cloud-based software platform (SaaS) that serves as the central nervous system of the tokenization project. The platform includes a secure dashboard interface with real-time project status, key performance indicators, milestone tracking, and visual progress bars. It includes a centralized document repository with AES-256 encryption, full version control, granular access permissions, and full-text search. It provides project management tools with Gantt charts, task assignment, resource allocation views, and automated notifications. It includes secure communication channels with end-to-end encrypted messaging, threaded conversations, file attachment capabilities, and comprehensive audit logs. It offers compliance templates and checklists pre-configured for common tokenization documents, and a reporting and analytics engine with automated status reports, custom report builders, and interactive dashboards.
+                </p>
+                <p class="text-lg text-secondary">
+                    Critically, the platform unifies all Third-Party Service Providers into a single coordinated workflow. The Luxembourg legal counsel, the Dubai legal counsel, the VARA-licensed Issuer, the Custodian, Assetium, the RICS surveyor, the Big 4 auditor, the blockchain engineers, and the regulated distributors all interact through the platform. ARDEWA assigns a dedicated Project Manager who coordinates every workstream, tracks every deliverable, and ensures that the project moves from contract signature to T+1 liquidity on a predictable timeline.
+                </p>
+
+                <h4>The Dashboard: Unified Control and Transparency</h4>
+                <p class="text-lg text-secondary">
+                    Once the basket is live, the ARDEWA Dashboard provides real-time visibility into every aspect of the tokenized asset pool. The dashboard displays current NAV per token, updated quarterly based on Assetium's independent verification. It tracks distributions: amounts paid, dates, and projected next distributions. It monitors occupancy rates, rental income, and coverage ratios for the underlying properties. It shows token performance metrics including trading volume, price history, and market capitalization. It provides direct access to all compliance documents: audit reports, RICS certifications, Assetium Trust Scores, and regulatory filings. And it includes a new asset integration module that streamlines the addition of new properties to the basket.
+                </p>
+            </div>
+        </section>
+
+        <!-- ASSETIUM -->
+        <section class="section" id="assetium">
+            <div class="container-narrow">
+                <span class="section-tag">02 / The Verification Layer</span>
+                <h2>Assetium: Without This, the Model Does Not Function</h2>
+                <div class="accent-line"></div>
+                
+                <p class="text-lg text-secondary">
+                    There is a fundamental problem that every tokenization project must solve, and most fail to solve it adequately: how does an investor know that the physical asset backing the token actually exists, is in the condition claimed, and remains that way over time? Without a credible answer to this question, a token is not an investment. It is a speculation based on trust in the issuer's word.
+                </p>
+                <p class="text-lg text-secondary">
+                    Assetium is the independent verification layer that answers this question with objective, auditable evidence. Assetium is not owned by ARDEWA. It is an independent Third-Party Service Provider that the Client engages directly under a separate contract. ARDEWA's role is limited to facilitating the introduction and coordinating the verification workflow within the overall project timeline.
+                </p>
+                <p class="text-lg text-secondary">
+                    Assetium executes a multi-phase verification program. <strong>Phase A</strong> processes satellite imagery (via MKGT, a UAE Space Agency-licensed provider) and cross-references it with Luxembourg land registry records, cadastral data, MLS comparable data, and title documentation. This phase takes 72 to 96 hours and produces a preliminary geological and documentary report. <strong>Phase B</strong> deploys terrestrial LiDAR scanning (Leica precision 3D scanning) executed by a licensed EU inspection partner. The Geo-Sentinel engine captures exact floor area, structural condition, finish quality, and compliance with declared specifications. The inspection report is generated independently of any data provided by the asset owner. <strong>Phase C</strong> publishes the Digital Twin: an immutable Trust Score (0 to 100) and verified NAV for each property and for the aggregate pool on the XRP Ledger blockchain. Once published, these values cannot be modified by any party.
+                </p>
+                <p class="text-lg text-secondary">
+                    The verification is further reinforced by a <strong>RICS-accredited surveyor</strong> who certifies the LiDAR methodology and the NAV calculation as compliant with international property valuation standards. This certification is included as an appendix to the Whitepaper submitted to VARA. Additionally, a <strong>Big 4 firm</strong> (Deloitte, PwC, KPMG, or EY Dubai office) conducts a six-monthly audit of the data chain from physical inspection through to XRP Ledger publication. The first audit occurs before VARA submission. Subsequent audits occur every six months throughout the basket life.
+                </p>
+                <p class="text-lg text-secondary">
+                    Without Assetium, a tokenized real estate basket is a digital representation of a promise. With Assetium, it is a digital representation of verified reality. This is the difference that institutional investors require before committing capital. It is the piece that makes the entire model investable.
+                </p>
+
+                <h4>Assetium Fee Structure</h4>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Fee</th><th>Amount (USD)</th><th>When Due</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Initial Full Verification Fee</strong></td><td class="green-highlight">30,000</td><td>Payable once token commercialization is confirmed by the bank or Hex Trust (post-Gate decision, prior to token issuance)</td></tr>
+                            <tr><td><strong>Annual Maintenance Fee</strong></td><td class="green-highlight">0.40% of NAV (USD 400,000 on USD 100M)</td><td>Payable within 10 days after token issuance (Year 1), then annually within 10 days of each anniversary</td></tr>
+                            <tr><td><strong>Additional Asset Verification</strong></td><td class="green-highlight">USD 3,000 per new asset</td><td>Payable when new properties are added to an existing basket</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-muted">All Assetium fees are paid directly by the Client/SPV to Assetium under a separate contract. ARDEWA does not receive any compensation from Assetium. The fees presented above are based on observed values from comparable institutional baskets and are negotiable directly with Assetium.</p>
+            </div>
+        </section>
+
+        <!-- ECONOMICS -->
+        <section class="section section-dark" id="economics">
+            <div class="container-narrow">
+                <span class="section-tag">03 / Complete Economics · USD 100M Basket</span>
+                <h2>All Costs, All Revenues, All Negotiable</h2>
+                <div class="accent-line"></div>
+                
+                <div class="quote-block">
+                    <p>"All costs presented below are based on observed values from comparable institutional baskets. Each fee is negotiated separately with each service provider. Nothing is fixed. Everything is transparent. The Client is free to engage alternative providers for any service category."</p>
+                </div>
+
+                <h4>Model Assumptions</h4>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Assumption</th><th>Value</th></tr></thead>
+                        <tbody>
+                            <tr><td>NAV of Basket</td><td>USD 100,000,000</td></tr>
+                            <tr><td>Tokens Sold to Investors (70%)</td><td>USD 70,000,000</td></tr>
+                            <tr><td>Tokens Retained by SPV (30%)</td><td>USD 30,000,000</td></tr>
+                            <tr><td>Annual Gross Rental Yield</td><td>6% (USD 6,000,000)</td></tr>
+                            <tr><td>Operating Costs</td><td>25% of gross income (USD 1,500,000)</td></tr>
+                            <tr><td>Net Operating Income (NOI)</td><td>USD 4,500,000</td></tr>
+                            <tr><td>Estimated Annual Secondary Trading Volume</td><td>~15% of NAV (USD 15,000,000)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Day 1: Capital Received by the Luxembourg SPV (Cyril)</h4>
+                <p class="text-lg text-secondary">
+                    Upon token issuance, the 70% of tokens placed with institutional investors generate gross proceeds of USD 70,000,000. These proceeds are received in <strong>USDC or USDT</strong> directly to the Custodian wallet of the SPV. From these gross proceeds, the following items are deducted before the net capital is transferred to the SPV. If the SPV requires fiat currency (USD, EUR, or AED), the VARA Custodian can execute an OTC liquidation of the stablecoins and deposit the fiat directly into the DIFC PC's bank account in Dubai. The cost of OTC liquidation is negotiable with the Custodian and is separate from the custody fee.
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Item</th><th>Amount (USD)</th><th>Notes</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Gross Capital Raised (70% tokens sold)</strong></td><td class="green-highlight">70,000,000</td><td>Placed with regulated investors at issuance. Immediate liquidity.</td></tr>
+                            <tr><td>(−) ARDEWA Technology Implementation Fee (2.5% NAV)</td><td>(2,500,000)</td><td>One-time. Compensates ARDEWA for technology platform deployment, multi-provider coordination, and strategic advisory throughout the project. Payable only upon successful Go-Live.</td></tr>
+                            <tr><td>(−) Issuer Fee (Ctrl Alt Solutions DMCC) (0.75% of capital raised)</td><td>(525,000)</td><td>One-time. VARA-regulated token issuance, KYC/AML, smart contract deployment, investor onboarding.</td></tr>
+                            <tr><td>(−) Custodian Integration + Year 1 Fee</td><td>(475,000)</td><td>Setup of custody infrastructure, multi-signature wallets, cold storage, Year 1 custody services.</td></tr>
+                            <tr><td>(−) Ctrl Alt Developer/Admin Fee (initial)</td><td>(150,000)</td><td>Smart contract deployment, investor registry setup, secondary market configuration.</td></tr>
+                            <tr><td>(−) ARDEWA Technology Fee Year 1 (0.25% NAV)</td><td>(250,000)</td><td>Platform access, dedicated Project Manager, technical support, software updates, Dashboard.</td></tr>
+                            <tr><td>(−) Assetium Annual Maintenance Fee Year 1 (0.40% NAV)</td><td>(400,000)</td><td>Continuous monitoring, Digital Twin maintenance, Geo-Sentinel engine, quarterly NAV updates.</td></tr>
+                            <tr><td>(−) Assetium Initial Verification Fee</td><td>(30,000)</td><td>Satellite + LiDAR + Digital Twin publication on XRP Ledger.</td></tr>
+                            <tr class="total-row"><td><strong>NET CASH TO SPV (CYRIL) DAY 1</strong></td><td class="green-highlight"><strong>≈ 65,670,000</strong></td><td>Transferred to SPV's designated account.</td></tr>
+                            <tr><td><strong>Tokens Retained by SPV (30%)</strong></td><td class="green-highlight"><strong>30,000,000</strong></td><td>In ARVA tokens on XRP Ledger. These tokens continue to generate income.</td></tr>
+                            <tr class="total-row"><td><strong>TOTAL VALUE DAY 1 (CASH + TOKENS)</strong></td><td class="green-highlight"><strong>≈ 95,670,000</strong></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Annual Distribution of Net Operating Income (Year 2+)</h4>
+                <p class="text-lg text-secondary">
+                    Each year, the gross rental income from the properties flows into the Luxembourg SPV. Operating costs are paid first. The remaining Net Operating Income is distributed according to a pre-defined waterfall encoded in the smart contract. Fees to service providers are paid first, then the remaining distributable cash flow is split 70% to token holders and 30% to the SPV. All distributions are executed automatically by the smart contract on Day 15 of each month, reading NAV data from the Assetium Oracle on the XRP Ledger.
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Item</th><th>% NAV</th><th>Amount (USD)</th><th>Recipient</th></tr></thead>
+                        <tbody>
+                            <tr><td>Gross Rental Income</td><td></td><td>6,000,000</td><td></td></tr>
+                            <tr><td>(−) Operating Costs</td><td></td><td>(1,500,000)</td><td></td></tr>
+                            <tr><td><strong>= Net Operating Income (NOI)</strong></td><td></td><td><strong>4,500,000</strong></td><td></td></tr>
+                            <tr><td>(−) ARDEWA Platform Annual Fee</td><td>0.25%</td><td>(250,000)</td><td>ARDEWA</td></tr>
+                            <tr><td>(−) Assetium Annual Fee</td><td>0.40%</td><td>(400,000)</td><td>Assetium</td></tr>
+                            <tr><td>(−) Custodian Annual Fee</td><td>0.25%</td><td>(250,000)</td><td>VARA Custodian</td></tr>
+                            <tr><td>(−) Ctrl Alt Developer/Admin Fee</td><td>0.15%</td><td>(150,000)</td><td>Ctrl Alt (Emisor)</td></tr>
+                            <tr><td>(−) SPV Administration Fee (Cyril)</td><td>0.50%</td><td>(500,000)</td><td>CydonRWA</td></tr>
+                            <tr><td>(−) Big 4 Audits (2×/year)</td><td></td><td>(100,000)</td><td>Big 4 Firm</td></tr>
+                            <tr><td>(−) Legal & Compliance Ongoing</td><td></td><td>(50,000)</td><td>Legal Counsel</td></tr>
+                            <tr><td><strong>= Distributable Cash Flow</strong></td><td></td><td><strong>2,800,000</strong></td><td></td></tr>
+                            <tr><td>→ Token Holders (70%)</td><td></td><td>1,960,000</td><td>Investors (ARVA token holders)</td></tr>
+                            <tr><td>→ SPV / Cyril (30%)</td><td></td><td>840,000</td><td>CydonRWA</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Cyril's Total Annual Revenue (Three Streams)</h4>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Revenue Stream</th><th>Amount (USD)</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>SPV Administration Fee (0.50% NAV)</strong></td><td class="green-highlight">500,000</td><td>Fixed annual fee for managing the Luxembourg SPV: corporate maintenance, regulatory filings, compliance, coordination with DIFC PC. Deducted from NOI before distributable cash flow.</td></tr>
+                            <tr><td><strong>30% of Distributable Cash Flow</strong></td><td class="green-highlight">840,000</td><td>Dividend from the 30% of tokens retained by the SPV. Paid after all fees. Represents the return on retained ownership.</td></tr>
+                            <tr><td><strong>Trading Fees (0.10% × ~USD 15M volume)</strong></td><td class="green-highlight">15,000</td><td>Perpetual fee on secondary market trading. Every time an ARVA token changes hands, 0.10% is routed to the SPV by the smart contract. Grows with trading volume.</td></tr>
+                            <tr class="total-row"><td><strong>CYRIL'S TOTAL ANNUAL REVENUE</strong></td><td class="green-highlight"><strong>1,355,000</strong></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-muted">The trading fee is perpetual and grows with the secondary market. As the basket matures and trading volume increases, this stream compounds. The 30% retained tokens also appreciate with the underlying assets, creating additional value beyond the annual cash flow.</p>
+            </div>
+        </section>
+
+        <!-- SCALING -->
+        <section class="section" id="scaling">
+            <div class="container-narrow">
+                <span class="section-tag">04 / Scaling the Basket</span>
+                <h2>Adding New Assets · The 80% Cost Advantage</h2>
+                <div class="accent-line"></div>
+                
+                <p class="text-lg text-secondary">
+                    One of the most powerful features of the ARDEWA Basket model is its scalability. Once the first USD 100M basket is structured, the legal architecture, the Whitepaper, the Smart Contract, the VARA approval, and all service provider relationships are already in place. Adding new assets to the basket is not a new project. It is an expansion of an existing regulated structure.
+                </p>
+                <p class="text-lg text-secondary">
+                    This means that adding USD 10,000,000 in new assets costs approximately <strong>80% less</strong> than the initial setup. The ARDEWA Implementation Fee is already paid. The VARA submission is already approved. The legal architecture is already built. Only minor addenda to existing documents are needed. The Smart Contract requires only a minor update to incorporate the new assets. The Big 4 audit requires only a supplement, not a full new audit.
+                </p>
+                <p class="text-lg text-secondary">
+                    Assetium charges a reduced fee of <strong>USD 3,000 per new asset</strong> for verification, compared to the full basket verification fee. This is because the verification infrastructure (satellite processing, LiDAR coordination, Digital Twin publication pipeline) is already deployed and operational.
+                </p>
+                <p class="text-lg text-secondary">
+                    New tokens are minted at the <strong>updated NAV</strong> reflecting the newly added assets. Existing token holders are diluted in percentage terms but compensated by the NAV appreciation resulting from the addition of valuable new assets. Token holders vote on each new mint (simple majority required), providing governance protection. This mechanism is identical to Tranche 2 and Tranche 3 in the standard ARDEWA multi-tranche model.
+                </p>
+
+                <h4>Cost Comparison: Initial Basket vs. Adding USD 10M</h4>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Item</th><th>Initial USD 100M Basket</th><th>Add USD 10M</th><th>Savings</th></tr></thead>
+                        <tbody>
+                            <tr><td>ARDEWA Implementation Fee</td><td>USD 2,500,000</td><td>— (already paid)</td><td>100%</td></tr>
+                            <tr><td>Legal (Luxembourg + Dubai)</td><td>USD 65,000–130,000</td><td>USD 10,000–20,000 (addendum only)</td><td>~85%</td></tr>
+                            <tr><td>VARA Submission</td><td>Included in Issuer Fee</td><td>— (no new submission)</td><td>100%</td></tr>
+                            <tr><td>Smart Contract Update</td><td>USD 12,000–18,000</td><td>USD 3,000–5,000</td><td>~70%</td></tr>
+                            <tr><td>Assetium Verification</td><td>USD 30,000 (entire basket)</td><td><strong>USD 3,000 per new asset</strong></td><td>Per asset fee</td></tr>
+                            <tr><td>Big 4 Audit (update)</td><td>USD 40,000–80,000</td><td>USD 8,000–15,000 (supplement)</td><td>~80%</td></tr>
+                            <tr class="total-row"><td><strong>Total Marginal Cost</strong></td><td></td><td><strong>≈ 20% of initial cost</strong></td><td><strong>~80% savings</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY ARDEWA IS SUPERIOR -->
+        <section class="section section-dark">
+            <div class="container-narrow">
+                <span class="section-tag">05 / Why ARDEWA Is Always Superior</span>
+                <h2>Structural Advantages Over Any Alternative</h2>
+                <div class="accent-line"></div>
+                <div class="cards-grid">
+                    <div class="card featured">
+                        <span class="card-tag">Advantage 1</span>
+                        <h3>Regulated Infrastructure from Day 0</h3>
+                        <p>ARDEWA operates within a VARA-licensed ecosystem in Dubai. Every token issued is regulated. Every custodian is licensed. Every distributor is compliant. This is not DeFi. This is institutional-grade infrastructure that satisfies the compliance requirements of Tier-1 banks, family offices, and pension funds.</p>
+                    </div>
+                    <div class="card featured">
+                        <span class="card-tag">Advantage 2</span>
+                        <h3>Immediate Liquidity at Issuance</h3>
+                        <p>ARDEWA's regulated distributors and institutional partners can place tokens immediately upon issuance. Cyril does not need to wait for secondary market liquidity. The tokens are placed with pre-vetted institutional investors at T+1 settlement. The SPV receives USDC or USDT directly to its Custodian wallet, convertible to fiat (USD, EUR, AED) via OTC.</p>
+                    </div>
+                    <div class="card featured">
+                        <span class="card-tag">Advantage 3</span>
+                        <h3>Assetium: The Missing Piece No One Else Has</h3>
+                        <p>Without independent verification of the physical assets, tokenization is a digital representation of a promise. Assetium provides satellite verification, LiDAR scanning, Digital Twin publication on XRP Ledger, RICS certification, and Big 4 audit. This is the layer that makes the model investable for institutional capital.</p>
+                    </div>
+                    <div class="card featured">
+                        <span class="card-tag">Advantage 4</span>
+                        <h3>Unified Dashboard and Coordination</h3>
+                        <p>ARDEWA's platform unifies all Third-Party Service Providers into a single coordinated workflow. A dedicated Project Manager tracks every deliverable. The Dashboard provides real-time visibility into NAV, distributions, occupancy, and token performance. Cyril manages the entire ecosystem from one interface.</p>
+                    </div>
+                    <div class="card featured">
+                        <span class="card-tag">Advantage 5</span>
+                        <h3>Scalable Without Rebuilding</h3>
+                        <p>Once the first basket is live, adding new assets costs ~80% less because the entire infrastructure is already in place. New tokens are minted at the updated NAV. Token holders vote. The model scales without requiring new VARA submissions, new legal structures, or new smart contracts.</p>
+                    </div>
+                    <div class="card featured">
+                        <span class="card-tag">Advantage 6</span>
+                        <h3>Multi-Currency OTC Settlement</h3>
+                        <p>Token sale proceeds are received in USDC or USDT. The VARA Custodian can execute OTC liquidation and deposit USD, EUR, or AED directly into the DIFC PC's Dubai bank account. Cyril chooses the currency. The cost is negotiable with the Custodian.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="section" id="process">
+            <div class="container-narrow">
+                <span class="section-tag">06 / The Process</span>
+                <h2>From Contract Signature to T+1 Liquidity</h2>
+                <div class="accent-line"></div>
+                <p class="text-lg text-secondary" style="margin-bottom:1.5rem;">
+                    <strong>Base principle:</strong> Client pays USD 5,000 at contract signing. No other payment to ARDEWA until the Regulated Distributor confirms pre-approval. If declined, process stops. Total exposure: USD 5,000.
+                </p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Step</th><th>Activity</th><th>By</th><th>Timeline</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td><strong>Contract Execution with ARDEWA.</strong> Client signs ARDEWA TSA V4.0. Pays USD 5,000 Onboarding Fee. Delivers asset documentation. ARDEWA performs 48-hour eligibility review.</td><td>ARDEWA</td><td>Week 0</td></tr>
+                            <tr><td>2</td><td><strong>Assetium Satellite + Documentary Pre-Review.</strong> Satellite imagery processed. Cross-reference with Luxembourg land registry and title docs. Preliminary NAV Pre-Report sent to Distributor.</td><td>Assetium</td><td>Week 1–2</td></tr>
+                            <tr><td>3</td><td><strong>GATE: Regulated Distributor Pre-Approval.</strong> Distributor evaluates pool against institutional placement criteria. If approved, formal pre-approval issued. If declined, process stops.</td><td>Distributor</td><td>Week 2–3</td></tr>
+                            <tr><td>4</td><td><strong>Assetium Full Verification.</strong> LiDAR inspection. Digital Twin publication on XRP Ledger. Trust Score and NAV published. USD 30,000 Initial Fee payable.</td><td>Assetium</td><td>Week 3–12</td></tr>
+                            <tr><td>5</td><td><strong>Luxembourg Legal.</strong> SPV verified or constituted. Assignment of Economic Rights Agreement. Security perfection. Enforceability opinion.</td><td>Lux Counsel</td><td>Week 4–8</td></tr>
+                            <tr><td>6</td><td><strong>Dubai DIFC PC Constitution.</strong> PCR 2024. GP/LP structure. Cross-border legal opinion.</td><td>Dubai Counsel</td><td>Week 5–10</td></tr>
+                            <tr><td>7</td><td><strong>RICS Certification + Big 4 First Audit.</strong> Methodology certified. Data chain audited. Both appended to Whitepaper.</td><td>Surveyor + Auditor</td><td>Week 8–12</td></tr>
+                            <tr><td>8</td><td><strong>Issuer + Custodian Agreements.</strong> Ctrl Alt Issuance Agreement. Custodian Custody Agreement. All deducted from proceeds.</td><td>Ctrl Alt + Custodian</td><td>Week 10–14</td></tr>
+                            <tr><td>9</td><td><strong>Whitepaper + Tokenomics.</strong> ARDEWA delivers complete Whitepaper draft and tokenomics design.</td><td>ARDEWA</td><td>Week 10–14</td></tr>
+                            <tr><td>10</td><td><strong>Smart Contract Dev + Audit.</strong> Institutional-grade smart contracts. Independent security audit.</td><td>Engineers</td><td>Week 10–16</td></tr>
+                            <tr><td>11</td><td><strong>VARA Submission and Approval.</strong> Complete package presented. 4–8 weeks review.</td><td>Ctrl Alt</td><td>Week 14–22</td></tr>
+                            <tr><td>12</td><td><strong>Token Minting.</strong> ARVA tokens minted on XRP Ledger. Transferred to Custodian.</td><td>Ctrl Alt + Custodian</td><td>Week 22</td></tr>
+                            <tr><td>13</td><td><strong>Institutional Distribution.</strong> Regulated Distributors place tokens. Immediate liquidity. T+1 settlement.</td><td>Distributors</td><td>Week 22–24</td></tr>
+                            <tr><td>14</td><td><strong>OTC Settlement.</strong> USDC/USDT liquidated to fiat (USD/EUR/AED). Deposited to DIFC PC Dubai bank account.</td><td>Custodian</td><td>T+1</td></tr>
+                            <tr><td>15</td><td><strong>Dashboard Active.</strong> Real-time NAV, distributions, occupancy, coverage ratio. Day 15 monthly auto-distributions.</td><td>ARDEWA</td><td>Ongoing</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEXT STEPS -->
+        <section class="section section-dark" id="nextsteps">
+            <div class="container-narrow" style="text-align:center;">
+                <span class="section-tag">07 / Next Steps</span>
+                <h2>The Path Forward</h2>
+                <div class="accent-line" style="margin:1rem auto 2rem;"></div>
+                
+                <div class="table-wrap" style="text-align:left;">
+                    <table>
+                        <thead><tr><th>Step</th><th>Action</th><th>Who</th></tr></thead>
+                        <tbody>
+                            <tr><td>1</td><td><strong>Review & Align.</strong> 45-minute working session to walk through the model.</td><td>Cyril + Mauricio</td></tr>
+                            <tr><td>2</td><td><strong>Identify First Basket.</strong> Min 5 properties. Min AUM USD 100M. Clean title. Documented rental history.</td><td>Cyril (with ARDEWA input)</td></tr>
+                            <tr><td>3</td><td><strong>Sign ARDEWA TSA V4.0.</strong> USD 5,000 Onboarding Fee. Project Manager assigned. Platform access provisioned.</td><td>Cyril + Mauricio</td></tr>
+                            <tr><td>4</td><td><strong>Assetium Pre-Review Launches.</strong> Satellite + documentary. NAV Pre-Report for Distributor.</td><td>ARDEWA + Assetium</td></tr>
+                            <tr><td>5</td><td><strong>Gate Decision.</strong> Distributor pre-approval. If yes, full deployment. If no, stop.</td><td>Distributor</td></tr>
+                            <tr><td>6</td><td><strong>Full Deployment.</strong> All workstreams launch in parallel.</td><td>All parties</td></tr>
+                            <tr><td>7</td><td><strong>Go-Live.</strong> Tokens minted. Distribution. T+1 settlement. Dashboard active.</td><td>All parties</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="signature-block">
+                    <p class="text-muted" style="margin-bottom:1rem;">Prepared by:</p>
+                    <p class="text-secondary"><strong>Katherine Schneider</strong></p>
+                    <p class="text-muted">Project Development</p>
+                    <p class="text-muted">ARDEWA Infrastructure LLC · Dubai, UAE</p>
+                    <p class="text-muted">info@ardewa.com</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container-narrow">
+            <p>CONFIDENTIAL | This proposal is intended solely for Cyril Boudon (CydonRWA) and contains proprietary information of ARDEWA Infrastructure LLC. Unauthorized distribution, copying, or disclosure is prohibited. This document does not constitute an offer of securities or financial instruments in any jurisdiction. All costs presented are based on observed values from comparable institutional baskets. Each fee is negotiated separately with each service provider. Nothing is fixed. Everything is transparent. ARDEWA Infrastructure LLC is a technology services provider holding a Dubai Mainland license. ARDEWA does not issue virtual assets, provide custody, or engage in regulated virtual asset activities. All such activities are performed by independent, appropriately licensed Third-Party Service Providers. © 2026 ARDEWA Infrastructure LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
